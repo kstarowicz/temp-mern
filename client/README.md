@@ -23,3 +23,8 @@ https://cloudinary.com   -przechowywanie multimediów
 [Mockaroo ](https://www.mockaroo.com/)
 
 https://recharts.org/en-US/
+
+Render (https://render.com/)
+
+- sign up of for account
+- create git repository
