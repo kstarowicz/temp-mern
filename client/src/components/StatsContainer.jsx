@@ -3,6 +3,7 @@ import Wrapper from '../assets/wrappers/StatsContainer';
 import StatItem from './StatItem';
 
 
+
 const StatsContainer = ({ defaultStats }) => {
   const stats = [
     {

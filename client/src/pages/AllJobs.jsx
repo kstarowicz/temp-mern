@@ -5,6 +5,8 @@ import { useLoaderData } from 'react-router-dom';
 import { useContext, createContext } from 'react';
 
 
+
+
 export const loader = async ({ request }) => {
 
 const params = Object.fromEntries([
@@ -41,5 +43,5 @@ const AllJobs = () => {
   );
 };
 
-export const useAllJobsContext = () => useContext(AllJobsContext);
 export default AllJobs;
+export const useAllJobsContext = () => useContext(AllJobsContext);
