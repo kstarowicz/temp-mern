@@ -28,3 +28,5 @@ Render (https://render.com/)
 
 - sign up of for account
 - create git repository
+
+(https://tanstack.com/query/v4/docs/react/overview)

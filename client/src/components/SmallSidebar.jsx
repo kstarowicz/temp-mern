@@ -4,7 +4,7 @@ import { useDashboardContext } from '../pages/DashboardLayout'
 import Logo from "./Logo";
 import links from "../utils/links";
 import { NavLink } from "react-router-dom";
-import NavLinks from "./NavLinks";
+//import NavLinks from "./NavLinks";
 
 const SmallSidebar = () => {
   const { showSidebar, toggleSidebar } = useDashboardContext();
@@ -12,8 +12,8 @@ const SmallSidebar = () => {
   return (
     <Wrapper>
       <div className={
-        showSidebar ? 'sidebar-container show-sidebar' : 
-        'sidebar-container'
+        showSidebar ? 'sidebar-container show-sidebar' 
+        : 'sidebar-container'
         }
         >
         <div className="content">
@@ -23,8 +23,28 @@ const SmallSidebar = () => {
           <header>
             <Logo />
           </header>
-         <NavLinks/>
+
+         <div className='nav-links'>
+            {links.map((link) => {
+              const { text, path, icon } = link;
+
+              return (
+                <NavLink
+                  to={path}
+                  key={text}
+                  className='nav-link'
+                  onClick={toggleSidebar}
+                  // will discuss in a second
+                  end
+                >
+                  <span className='icon'>{icon}</span>
+                  {text}
+                </NavLink>
+              );
+            })}
+          </div>
         </div>
+        
 
       </div>
     </Wrapper>
