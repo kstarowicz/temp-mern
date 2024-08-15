@@ -86,10 +86,11 @@ const router = createBrowserRouter([
         element:<AddJob/>, action: addJobAction,
       },
       {
-        path:'stats',
-        element:< Stats />,
+        path: 'stats',
+        element: <Stats />,
         loader: statsLoader,
-      },
+        errorElement: <ErrorElement />,
+},
             {
         path:'all-jobs',
         element:<AllJobs/>,
