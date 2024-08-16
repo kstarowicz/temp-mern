@@ -74,11 +74,16 @@ const router = createBrowserRouter([
   {
     path:'login',
     element: <Login/>,
-    action: loginAction,
+    action: loginAction(queryClient),
   },
   {
     path:'dashboard',
-    element: <DashboardLayout isDarkThemeEnabled = {isDarkThemeEnabled} />,
+    element: (
+    <DashboardLayout 
+    isDarkThemeEnabled = {isDarkThemeEnabled} 
+    queryClient={queryClient}
+    />
+  ),
     loader: dashboardLoader(queryClient),
     children: [
       {
@@ -91,15 +96,15 @@ const router = createBrowserRouter([
         loader: statsLoader(queryClient),
         errorElement: <ErrorElement />,
 },
-            {
+{
         path:'all-jobs',
         element:<AllJobs/>,
         loader: allJobsLoader,
       },
-            {
+      {
         path:'profile',
         element:<Profile/>,
-        action: profileAction,
+        action: profileAction(queryClient),
       },
       {
         path:'admin',
@@ -115,7 +120,7 @@ const router = createBrowserRouter([
       },
       {path:'delete-job/:id',action:deleteJobAction}
     ]
-  },
+},
   ],
   },
   
