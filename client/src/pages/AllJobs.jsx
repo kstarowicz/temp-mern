@@ -26,24 +26,23 @@ const allJobsQuery = (params) => {
 };
 
 
-export const loader = async ({ request }) => {
-const params = Object.fromEntries([
+
+export const loader =
+  (queryClient) =>
+  async ({ request }) => {
+    const params = Object.fromEntries([
       ...new URL(request.url).searchParams.entries(),
     ]);
 
-  try {
-    return { data, searchValues: { ...params } };
-  } catch (error) {
-    toast.error(error?.response?.data?.msg);
-    return error;
-  }
-};
+    await queryClient.ensureQueryData(allJobsQuery(params));
+    return { searchValues: { ...params } };
+  };
 
 const AllJobsContext = createContext()
 
 const AllJobs = () => {
-  const { data, searchValues } = useLoaderData();
-
+  const { searchValues } = useLoaderData();
+  const { data } = useQuery(allJobsQuery(searchValues));
   return (
     <AllJobsContext.Provider value={{ data, searchValues }}>
       <SearchContainer />
