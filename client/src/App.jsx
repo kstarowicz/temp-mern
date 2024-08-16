@@ -79,7 +79,7 @@ const router = createBrowserRouter([
   {
     path:'dashboard',
     element: <DashboardLayout isDarkThemeEnabled = {isDarkThemeEnabled} />,
-    loader: dashboardLoader,
+    loader: dashboardLoader(queryClient),
     children: [
       {
         index:true,
