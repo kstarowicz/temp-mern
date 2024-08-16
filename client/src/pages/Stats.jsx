@@ -13,14 +13,12 @@ const statsQuery = {
 
 export const loader = (queryClient) => async () => {
    const data = await queryClient.ensureQueryData(statsQuery);
-  return data;
+  return null;
 };
 const Stats = () => {
- // const { defaultStats, monthlyApplications } = useLoaderData();
-
+ 
  const { data } = useQuery(statsQuery);
-
-  const { defaultStats, monthlyApplications } = data;
+ const { defaultStats, monthlyApplications } = data;
 
   return (
     <>
