@@ -2,9 +2,18 @@ import { Router } from 'express';
 import { register, logout, login } from '../controllers/authController.js';
 import { validateRegisterInput,validateLoginInput } from '../middleware/validationMiddleware.js'
 const router = Router();
+import rateLimiter from 'express-rate-limit';
+
+const apiLimiter = rateLimiter({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 15,
+  message: { msg: 'IP rate limit exceeded, retry in 15 minutes.' },
+});
+router.post('/register', apiLimiter, validateRegisterInput, register);
+router.post('/login', apiLimiter, validateLoginInput, login);
 
 router.post('/register', validateRegisterInput, register);
 router.post('/login', validateLoginInput, login);
-router.post('/logout', logout);
+router.get('/logout', logout);
 
 export default router;

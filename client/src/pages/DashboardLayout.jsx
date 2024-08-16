@@ -44,7 +44,7 @@ const DashboardLayout = ({ isDarkThemeEnabled, queryClient }) => {
   };
 
   const toggleSidebar = () => {
-    setShowSidebar(!showSidebar)
+    setShowSidebar(!showSidebar);
   };
 
   const logoutUser = async () => {
@@ -69,10 +69,8 @@ const DashboardLayout = ({ isDarkThemeEnabled, queryClient }) => {
     if (!isAuthError) return;
     logoutUser();
   }, [isAuthError]);
-  return (
-    ...
-  )
-};
+
+
 
   return (
   <DashboardContext.Provider 
