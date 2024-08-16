@@ -8,10 +8,22 @@ import customFetch from '../utils/customFetch';
 import { useQuery } from '@tanstack/react-query';
 
 
-export const loader = async ({ parms }) => {
+const singleJobQuery = (id) => {
+  return {
+    queryKey: ['job', id],
+    queryFn: async () => {
+      const { data } = await customFetch.get(`/jobs/${id}`);
+      return data;
+    },
+  };
+};
+
+export const loader = (queryClient) => 
+  async ({ parms }) => {
   try {
-    const { data } = await customFetch.get(`/jobs/$${params.id}`);
-    return data;
+     await queryClient.ensureQueryData(singleJobQuery(params.id));
+      return params.id;
+
   } catch (error) {
      toast.error(error?.response?.data?.msg);
      return redirect('/dashboard/all-jobs');
@@ -35,7 +47,10 @@ export const action =
   };
 
 const EditJob = () => {
-  const { job } = useLoaderData();
+  const id = useLoaderData();
+  const {
+    data: { job },
+  } = useQuery(singleJobQuery(id));
 
   return (
   <Wrapper>
