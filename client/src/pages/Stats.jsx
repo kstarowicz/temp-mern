@@ -11,22 +11,16 @@ const statsQuery = {
   },
 };
 
-export const loader = async () => {
-  return null;
- const response = await customFetch.get('/jobs/stats');
-    return response.data;
+export const loader = (queryClient) => async () => {
+   const data = await queryClient.ensureQueryData(statsQuery);
+  return data;
 };
 const Stats = () => {
  // const { defaultStats, monthlyApplications } = useLoaderData();
 
- const { isLoading, isError, data } = useQuery({
+ const { data } = useQuery(statsQuery);
 
-  });
-
-  if (isLoading) return <h4>Loading...</h4>;
-  if (isError) return <h4>Error...</h4>;
-
-  const { defaultStats, monthlyApplications } = data.data;
+  const { defaultStats, monthlyApplications } = data;
 
   return (
     <>
