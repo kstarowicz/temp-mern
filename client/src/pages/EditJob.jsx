@@ -19,7 +19,7 @@ const singleJobQuery = (id) => {
 };
 
 export const loader = (queryClient) => 
-  async ({ parms }) => {
+  async ({ params }) => {
   try {
      await queryClient.ensureQueryData(singleJobQuery(params.id));
       return params.id;
