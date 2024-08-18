@@ -26,14 +26,14 @@ export const loader = (queryClient) => async () => {
 
 const DashboardContext = createContext() ;
 
-const DashboardLayout = ({ isDarkThemeEnabled, queryClient }) => {
+const DashboardLayout = ({ queryClient }) => {
   
   const { user } = useQuery(userQuery).data;
   const navigate = useNavigate();
   const navigation = useNavigation();
   const isPageLoading = navigation.state === 'loading';
   const [showSidebar, setShowSidebar] = useState(false);
-  const [isDarkTheme, setIsDarkTheme] = useState(isDarkThemeEnabled);
+  const [isDarkTheme, setIsDarkTheme] = useState(checkDefaultTheme());
   const [isAuthError, setIsAuthError] = useState(false);
 
   const toggleDarkTheme = () => {

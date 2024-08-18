@@ -1,5 +1,3 @@
-
-
 const FormRow = ({ type, name, labelText, defaultValue, onChange }) => {
   return (
     <div className='form-row'>
@@ -20,4 +18,5 @@ const FormRow = ({ type, name, labelText, defaultValue, onChange }) => {
 }
 
 export default FormRow;
+
 
