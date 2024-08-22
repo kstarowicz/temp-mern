@@ -80,8 +80,7 @@ const router = createBrowserRouter([
   {
     path:'dashboard',
     element: (
-    <DashboardLayout 
-    />
+    <DashboardLayout/>
   ),
     loader: dashboardLoader(queryClient),
     children: [

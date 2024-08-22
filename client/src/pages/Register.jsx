@@ -6,6 +6,7 @@ import customFetch from '../utils/customFetch'
 import { toast } from 'react-toastify';
 
 
+
  export const action = async ({ request }) => {
    const formData = await request.formData();
    const data = Object.fromEntries(formData);
@@ -23,6 +24,7 @@ import { toast } from 'react-toastify';
 const Register = () => {
   //const navigation = useNavigation();
   //const isSubmitting = navigation.state === 'submitting';
+  //const FormRow = ({type, name, labelText, defaultVa}) =>{
   return (
     <Wrapper>
         <Form method='post' className='form'>
@@ -62,6 +64,7 @@ const Register = () => {
         </p>
       </Form>
     </Wrapper>
+    
   )
 }
 

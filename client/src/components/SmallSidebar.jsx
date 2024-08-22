@@ -23,11 +23,9 @@ const SmallSidebar = () => {
           <header>
             <Logo />
           </header>
-
          <div className='nav-links'>
             {links.map((link) => {
               const { text, path, icon } = link;
-
               return (
                 <NavLink
                   to={path}
@@ -44,8 +42,6 @@ const SmallSidebar = () => {
             })}
           </div>
         </div>
-        
-
       </div>
     </Wrapper>
   )
