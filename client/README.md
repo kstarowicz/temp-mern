@@ -30,3 +30,8 @@ Render (https://render.com/)
 - create git repository
 
 (https://tanstack.com/query/v4/docs/react/overview)
+
+-opisz wszystkie strony
+
+-napisać cel i działanie 
+-opisać instrukcję działąnia

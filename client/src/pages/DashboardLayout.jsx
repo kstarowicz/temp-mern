@@ -27,7 +27,7 @@ export const loader = (queryClient) => async () => {
 const DashboardContext = createContext() ;
 
 const DashboardLayout = ({ queryClient }) => {
-  
+  //spr. ({ queryClient }
   const { user } = useQuery(userQuery).data;
   const navigate = useNavigate();
   const navigation = useNavigation();
@@ -101,3 +101,5 @@ const DashboardLayout = ({ queryClient }) => {
 
 export const useDashboardContext = () => useContext(DashboardContext);
 export default DashboardLayout;
+
+//popraw strukture 
