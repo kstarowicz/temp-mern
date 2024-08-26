@@ -35,3 +35,5 @@ Render (https://render.com/)
 
 -napisać cel i działanie 
 -opisać instrukcję działąnia
+
+-- Postawić jeszcze raz strone frontend---
