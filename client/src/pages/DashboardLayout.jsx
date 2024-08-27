@@ -6,7 +6,7 @@ import customFetch from "../utils/customFetch"
 import { toast } from "react-toastify" //??
 import { useQuery } from "@tanstack/react-query"
 
-//import { checkDefaultTheme} from '../App' //??
+//import { checkDefaultTheme} from '../App' //?? niepotrzebne 
 
 const userQuery = {
   queryKey: ['user'],
@@ -27,7 +27,7 @@ export const loader = (queryClient) => async () => {
 const DashboardContext = createContext() ;
 
 const DashboardLayout = ({ queryClient }) => {
-  //spr. ({ queryClient }
+  //musi być queryClient przekazane
   const { user } = useQuery(userQuery).data;
   const navigate = useNavigate();
   const navigation = useNavigation();
