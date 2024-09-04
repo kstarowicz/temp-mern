@@ -7,7 +7,7 @@ import { toast } from "react-toastify" //??
 import { useQuery } from "@tanstack/react-query"
 
 //import { checkDefaultTheme} from '../App' //?? niepotrzebne 
-
+//solution problem with dashboard
 const userQuery = {
   queryKey: ['user'],
   queryFn: async () => {
