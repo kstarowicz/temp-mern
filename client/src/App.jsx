@@ -44,7 +44,7 @@ export const checkDefaultTheme = () => {
 
 
 checkDefaultTheme();
-
+//remodeling  action
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
