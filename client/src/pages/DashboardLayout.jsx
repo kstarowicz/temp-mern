@@ -53,6 +53,7 @@ const DashboardLayout = ({ queryClient }) => {
      queryClient.invalidateQueries();
     toast.success('Logging out ...');
   };
+  //invalidateQueries spr 
 
     customFetch.interceptors.response.use(
     (response) => {
