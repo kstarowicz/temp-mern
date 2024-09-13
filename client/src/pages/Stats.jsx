@@ -31,3 +31,4 @@ const Stats = () => {
 };
 export default Stats;
 
+//poprawiś i spr data

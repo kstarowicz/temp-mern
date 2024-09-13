@@ -44,7 +44,6 @@ export const checkDefaultTheme = () => {
 
 
 checkDefaultTheme();
-//remodeling  action
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -67,12 +66,9 @@ const router = createBrowserRouter([
     path:'register',
     element: <Register/>,
     action: registerAction,
-    //action:()=> {
-    //  console.log('hello there');
-     // return null;
-    //}
+   
   },
-  //przebudowa
+  
   {
     path:'login',
     element: <Login/>,
